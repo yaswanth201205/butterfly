@@ -1,0 +1,326 @@
+<svg width="600" height="600" viewBox="0 0 600 600"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+
+    <!-- Dark premium background -->
+    <radialGradient id="night" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#29204a"/>
+      <stop offset="55%" stop-color="#120d28"/>
+      <stop offset="100%" stop-color="#05030d"/>
+    </radialGradient>
+
+    <!-- Butterfly gradient -->
+    <linearGradient id="butterfly"
+                    x1="0%" y1="0%"
+                    x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd6f6"/>
+      <stop offset="50%" stop-color="#d89bea"/>
+      <stop offset="100%" stop-color="#7654c9"/>
+    </linearGradient>
+
+    <!-- Glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+
+  </defs>
+
+
+  <!-- Background -->
+  <rect width="600" height="600"
+        rx="35"
+        fill="url(#night)"/>
+
+
+  <!-- ========================= -->
+  <!-- ANIMATIONS -->
+  <!-- ========================= -->
+
+  <style>
+
+    /* Star animation */
+
+    .twinkle1 {
+      animation: twinkle 2s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .twinkle2 {
+      animation: twinkle 3s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .twinkle3 {
+      animation: twinkle 2.5s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    @keyframes twinkle {
+
+      0%, 100% {
+        opacity: 0.25;
+        transform: scale(0.7);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.3);
+      }
+
+    }
+
+
+    /* Butterfly wing flutter */
+
+    .leftWing {
+      transform-origin: 0px 55px;
+      animation: leftFlutter 2.2s ease-in-out infinite;
+    }
+
+    .rightWing {
+      transform-origin: 8px 55px;
+      animation: rightFlutter 2.2s ease-in-out infinite;
+    }
+
+    @keyframes leftFlutter {
+
+      0%, 100% {
+        transform: rotateY(0deg);
+      }
+
+      50% {
+        transform: rotateY(18deg);
+      }
+
+    }
+
+    @keyframes rightFlutter {
+
+      0%, 100% {
+        transform: rotateY(0deg);
+      }
+
+      50% {
+        transform: rotateY(-18deg);
+      }
+
+    }
+
+
+    /* Very gentle body movement */
+
+    .butterflyBody {
+      animation: bodyFloat 2.2s ease-in-out infinite;
+    }
+
+    @keyframes bodyFloat {
+
+      0%, 100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-3px);
+      }
+
+    }
+
+  </style>
+
+
+  <!-- ========================= -->
+  <!-- TWINKLING STARS -->
+  <!-- ========================= -->
+
+  <g fill="#ffffff">
+
+    <path class="twinkle1"
+      d="
+      M 170 170
+      L 175 184
+      L 189 189
+      L 175 194
+      L 170 208
+      L 165 194
+      L 151 189
+      L 165 184 Z"/>
+
+    <path class="twinkle2"
+      d="
+      M 430 170
+      L 434 181
+      L 445 185
+      L 434 189
+      L 430 200
+      L 426 189
+      L 415 185
+      L 426 181 Z"/>
+
+    <circle class="twinkle3" cx="135" cy="280" r="4"/>
+    <circle class="twinkle1" cx="465" cy="270" r="5"/>
+    <circle class="twinkle2" cx="200" cy="390" r="3"/>
+    <circle class="twinkle3" cx="405" cy="390" r="3"/>
+
+  </g>
+
+
+  <!-- ========================= -->
+  <!-- BUTTERFLY GLOW -->
+  <!-- ========================= -->
+
+  <ellipse
+    cx="300"
+    cy="300"
+    rx="100"
+    ry="80"
+    fill="#c98bea"
+    opacity="0.15"
+    filter="url(#glow)"
+  />
+
+
+  <!-- ========================= -->
+  <!-- BUTTERFLY -->
+  <!-- ========================= -->
+
+  <g transform="translate(300 250)">
+
+
+    <!-- LEFT WINGS -->
+
+    <g class="leftWing">
+
+      <!-- Left upper wing -->
+      <path
+        d="
+        M 0 35
+        C -55 -15
+          -110 0
+          -90 55
+        C -78 88
+          -35 90
+          0 58 Z"
+
+        fill="url(#butterfly)"
+        stroke="#fce4ff"
+        stroke-width="3"
+      />
+
+
+      <!-- Left lower wing -->
+      <path
+        d="
+        M 0 55
+        C -50 65
+          -78 105
+          -45 120
+        C -18 130
+          -3 88
+          5 65 Z"
+
+        fill="url(#butterfly)"
+        stroke="#fce4ff"
+        stroke-width="3"
+      />
+
+    </g>
+
+
+    <!-- RIGHT WINGS -->
+
+    <g class="rightWing">
+
+      <!-- Right upper wing -->
+      <path
+        d="
+        M 8 35
+        C 63 -15
+          118 0
+          98 55
+        C 86 88
+          43 90
+          8 58 Z"
+
+        fill="url(#butterfly)"
+        stroke="#fce4ff"
+        stroke-width="3"
+      />
+
+
+      <!-- Right lower wing -->
+      <path
+        d="
+        M 8 55
+        C 58 65
+          86 105
+          53 120
+        C 26 130
+          11 88
+          3 65 Z"
+
+        fill="url(#butterfly)"
+        stroke="#fce4ff"
+        stroke-width="3"
+      />
+
+    </g>
+
+
+    <!-- ========================= -->
+    <!-- BUTTERFLY BODY -->
+    <!-- ========================= -->
+
+    <g class="butterflyBody">
+
+      <!-- Body -->
+      <ellipse
+        cx="4"
+        cy="65"
+        rx="8"
+        ry="42"
+        fill="#fff1c7"
+      />
+
+
+      <!-- Left antenna -->
+      <path
+        d="M 1 28
+           Q -18 0 -40 10"
+
+        fill="none"
+        stroke="#fff1c7"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+
+
+      <!-- Right antenna -->
+      <path
+        d="M 7 28
+           Q 26 0 48 10"
+
+        fill="none"
+        stroke="#fff1c7"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+
+    </g>
+
+  </g>
+
+
+  <!-- Golden particles -->
+
+  <g fill="#f9e8a8">
+    <circle cx="230" cy="180" r="2"/>
+    <circle cx="370" cy="180" r="2"/>
+    <circle cx="215" cy="425" r="2"/>
+    <circle cx="385" cy="425" r="2"/>
+  </g>
+
+</svg>
